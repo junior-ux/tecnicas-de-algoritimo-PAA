@@ -1,11 +1,8 @@
-# Python3 program to solve Rat in a Maze
-# problem using backtracking
-
-# Maze size
+# Tamanho do labirinto
 n = 4
 
-# A utility function to check if x, y is valid
-# index for N * N Maze
+# Uma função utilitária para verificar se x, y é válido
+# índice para N * N do labirinto
 
 
 def isValid(n, maze, x, y, res):
@@ -13,24 +10,23 @@ def isValid(n, maze, x, y, res):
 		return True
 	return False
 
-# A recursive utility function to solve Maze problem
-
+# Uma função de utilidade recursiva para resolver o problema do labirinto
 
 def RatMaze(n, maze, move_x, move_y, x, y, res):
-	# if (x, y is goal) return True
+	# se (x, y é o objetivo) retorna Verdadeiro
 	if x == n-1 and y == n-1:
 		return True
 	for i in range(4):
-		# Generate new value of x
+		# Gerar novo valor de x
 		x_new = x + move_x[i]
 
-		# Generate new value of y
+		# Gerar novo valor de y
 		y_new = y + move_y[i]
 
-		# Check if maze[x][y] is valid
+		# Verifique se maze[x][y] é válido
 		if isValid(n, maze, x_new, y_new, res):
 
-			# mark x, y as part of solution path
+			# marque x, y como parte do caminho da solução
 			res[x_new][y_new] = 1
 			if RatMaze(n, maze, move_x, move_y, x_new, y_new, res):
 				return True
@@ -39,14 +35,14 @@ def RatMaze(n, maze, move_x, move_y, x, y, res):
 
 
 def solveMaze(maze):
-	# Creating a 4 * 4 2-D list
+	# Criando uma lista 4 * 4 2-D
 	res = [[0 for i in range(n)] for i in range(n)]
 	res[0][0] = 1
 
-	# x matrix for each direction
+	# matriz x para cada direção
 	move_x = [-1, 1, 0, 0]
 
-	# y matrix for each direction
+	# matriz y para cada direção
 	move_y = [0, 0, -1, 1]
 
 	if RatMaze(n, maze, move_x, move_y, 0, 0, res):
@@ -55,17 +51,15 @@ def solveMaze(maze):
 				print(res[i][j], end=' ')
 			print()
 	else:
-		print('Solution does not exist')
+		print('A solução não existe')
 
 
-# Driver program to test above function
+# Programa de driver para testar a função acima
 if __name__ == "__main__":
-	# Initialising the maze
+	# inicializando o labirinto
 	maze = [[1, 0, 0, 0],
 			[1, 1, 0, 1],
 			[0, 1, 0, 0],
 			[1, 1, 1, 1]]
 
 	solveMaze(maze)
-
-# This code is contributed by Anvesh Govind Saxena
