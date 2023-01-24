@@ -39,7 +39,7 @@ def findPartiion(arr, n):
 	return part[Sum // 2]
 
 # Código da unidade
-arr = [3, 2, 1, 3, 1, 14]
+arr = [3, 2, 1]
 n = len(arr)
 
 # Chamada de função
