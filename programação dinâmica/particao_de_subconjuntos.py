@@ -1,10 +1,20 @@
+# PROGRAMAÇÃO DINÂMICA
+
+# Armazenar os resultados dos subproblemas, para que não tenhamos que recalculá-los;
+# É uma técnica de desenvolvimento que busca encontrar a solução de vários 
+# subproblemas para, daí, então encontrar a solução do problema geral;
+
 # PROBLEMA:
 
 # Determinar se um determinado conjunto pode ser particionado em 2 subconjuntos,
 # de modo que a soma dos elementos, em ambos os subconjuntos sejam a mesma.
 # Exemplo: [3, 2, 1] subconjunto seria [3] == [2+1]
 
+# COMPLEXIDADE:
 
+# O(soma * N)
+
+# ALGORITMO
 
 # Retorna verdadeiro se arr[] puder ser particionado
 # em dois subconjuntos de igual soma, caso contrário false
@@ -47,4 +57,3 @@ if (findPartiion(arr, n) == 1):
 	print("Pode ser dividido em dois subconjuntos de igual soma")
 else:
 	print("Não pode ser dividido em dois subconjuntos de igual soma")
-
